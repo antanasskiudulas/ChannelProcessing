@@ -31,7 +31,7 @@ namespace ChannelProcessing
         {
             foreach (Error error in errors)
             {
-                Console.WriteLine(error);
+                Console.WriteLine(error.Tag);
             }
         }
 

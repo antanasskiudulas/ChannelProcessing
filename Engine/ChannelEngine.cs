@@ -43,6 +43,7 @@ namespace ChannelProcessing.Engine
             _channelWriter.Write("C", cChannelData);
             _channelWriter.Write("Y", yChannelData);
             _channelWriter.Write("X", xChannelData);
+            Console.WriteLine($"Channel B Mean: {bChannelMean}");
         }
     }
 }
