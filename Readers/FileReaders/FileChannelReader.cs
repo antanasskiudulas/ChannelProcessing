@@ -3,17 +3,17 @@
     /// <inheritdoc cref="IChannelReader"/>
     public class FileChannelReader : IChannelReader
     {
-        private readonly IFileReaderAsync _reader;
+        private readonly IFileReader _reader;
 
-        public FileChannelReader(IFileReaderAsync fileReader)
+        public FileChannelReader(IFileReader fileReader)
         {
             _reader = fileReader;
         }
 
         /// <inheritdoc/>
-        public async Task<List<double>> ReadChannel(string source, CancellationToken cancellation)
+        public List<double> ReadChannel(string source)
         {
-            string content = await _reader.ReadFile(source);
+            string content = _reader.ReadFile(source);
 
             return ExtractData(content);
 

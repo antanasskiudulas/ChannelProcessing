@@ -5,6 +5,6 @@
     /// </summary>
     public interface IChannelEngine
     {
-        public Task Start(string channelsPath, string parametersPath);
+        public void Start(string channelsPath, string parametersPath);
     }
 }

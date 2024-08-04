@@ -3,8 +3,8 @@
     /// <summary>
     /// Defines methods for reading a file
     /// </summary>
-    public interface IFileReaderAsync
+    public interface IFileReader
     {
-        public Task<string> ReadFile(string filePath);
+        public string ReadFile(string filePath);
     }
 }

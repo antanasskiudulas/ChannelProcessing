@@ -14,7 +14,7 @@ namespace ChannelProcessing
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<FileReaderAsync>().As<IFileReaderAsync>().SingleInstance();
+            builder.RegisterType<FileReader>().As<IFileReader>().SingleInstance();
             builder.RegisterType<FileParameterReader>().As<IParameterReader>().SingleInstance();
             builder.RegisterType<FileChannelReader>().As<IChannelReader>().SingleInstance();
             builder.RegisterType<ChannelProcessor>().As<IChannelProcessor>().SingleInstance();

@@ -9,17 +9,17 @@ namespace ChannelProcessing.Readers.FileReaders
         private const char INTERCEPT_KEY = 'c';
         private const int MAX_ARGUMENTS = 2;
 
-        private readonly IFileReaderAsync _reader;
+        private readonly IFileReader _reader;
 
-        public FileParameterReader(IFileReaderAsync readerAsync)
+        public FileParameterReader(IFileReader readerAsync)
         {
             _reader = readerAsync;
         }
 
         /// <inheritdoc/>
-        public async Task<ParameterModel> ReadParameters(string source)
+        public ParameterModel ReadParameters(string source)
         {
-            string content = await _reader.ReadFile(source);
+            string content = _reader.ReadFile(source);
 
             Dictionary<char, double> parameters = ExtractParameters(content);
 

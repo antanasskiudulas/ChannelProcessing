@@ -1,9 +1,9 @@
 ﻿namespace ChannelProcessing.Readers.FileReaders
 {
-    /// <inheritdoc cref="IFileReaderAsync"/>
-    public class FileReaderAsync : IFileReaderAsync
+    /// <inheritdoc cref="IFileReader"/>
+    public class FileReader : IFileReader
     {
-        public async Task<string> ReadFile(string filePath)
+        public string ReadFile(string filePath)
         {
             try
             {
@@ -11,7 +11,7 @@
                 {
                     using (StreamReader streamReader = new StreamReader(fileStream))
                     {
-                        return await streamReader.ReadToEndAsync();
+                        return streamReader.ReadToEnd();
                     }
                 }
             }

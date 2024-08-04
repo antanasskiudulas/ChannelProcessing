@@ -16,14 +16,21 @@ namespace ChannelProcessing.Writers
         /// <inheritdoc/>
         public void Write(string channelName, List<double> channel, string? destination = default)
         {
-            string? destinationPath = destination ?? Environment.ProcessPath;
+            string? destinationPath = destination ?? Path.GetDirectoryName(Environment.ProcessPath);
 
             if (destinationPath == null)
             {
                 throw new Exception("Error resolving destination path when writing channel information to file");
             }
 
-            File.WriteAllText(Path.Combine(destinationPath, channelName, FILE_EXTENSION), _formatter.FormatChannel(channelName, channel));
+            File.WriteAllText(Path.Combine(
+                destinationPath,
+                string.Concat(
+                    channelName,
+                    "-",
+                    DateTime.Now.ToFileTimeUtc(),
+                    FILE_EXTENSION)),
+                _formatter.FormatChannel(channelName, channel));
         }
     }
 }

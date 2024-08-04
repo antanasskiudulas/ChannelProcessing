@@ -11,6 +11,6 @@
         /// <param name="source">Channel source</param>
         /// <param name="cancellation">Async cancellation token</param>
         /// <returns>Sensor information</returns>
-        public Task<List<double>> ReadChannel(string source, CancellationToken cancellation);
+        public List<double> ReadChannel(string source);
     }
 }

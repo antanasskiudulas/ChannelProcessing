@@ -26,11 +26,11 @@ namespace ChannelProcessing.Engine
         }
 
         /// <inheritdoc/>
-        public async Task Start(string channelsPath, string parametersPath)
+        public void Start(string channelsPath, string parametersPath)
         {
-            List<double> xChannelData = await _channelReader.ReadChannel(channelsPath, CancellationToken.None);
+            List<double> xChannelData = _channelReader.ReadChannel(channelsPath);
 
-            ParameterModel model = await _parameterReader.ReadParameters(parametersPath);
+            ParameterModel model = _parameterReader.ReadParameters(parametersPath);
 
             List<double> aChannelData = _channelProcessor.ProcessChannelA(xChannelData);
             List<double> yChannelData = _channelProcessor.ProcessChannelY(xChannelData, model.Slope, model.Intercept);
@@ -38,7 +38,7 @@ namespace ChannelProcessing.Engine
             double bChannelMean = _channelProcessor.CalculateChannelMean(bChannelData);
             List<double> cChannelData = _channelProcessor.ProcessChannelC(xChannelData, bChannelMean);
 
-            _channelWriter.Write("A", cChannelData);
+            _channelWriter.Write("A", aChannelData);
             _channelWriter.Write("B", bChannelData);
             _channelWriter.Write("C", cChannelData);
             _channelWriter.Write("Y", yChannelData);
