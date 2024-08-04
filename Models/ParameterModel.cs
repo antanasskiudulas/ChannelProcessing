@@ -5,7 +5,7 @@
     /// </summary>
     public class ParameterModel
     {
-        public char Parameter { get; set; }
-        public double Value { get; set; }
+        public double Slope { get; set; }
+        public double Intercept { get; set; }
     }
 }
