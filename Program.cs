@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using ChannelProcessing.Engine;
 using CommandLine;
 
 namespace ChannelProcessing
@@ -20,7 +21,9 @@ namespace ChannelProcessing
         {
             using (ILifetimeScope scope = _container.BeginLifetimeScope())
             {
+                IChannelEngine engine = scope.Resolve<IChannelEngine>();
 
+                engine.Start(commandArgs.channelPath, commandArgs.parametersPath);
             }
         }
 

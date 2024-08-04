@@ -2,7 +2,7 @@
   "profiles": {
     "ChannelProcessing": {
       "commandName": "Project",
-      "commandLineArgs": "-c \"channel\" -p \"params\""
+      "commandLineArgs": "-c \"./channels.txt\" -p \"./parameters.txt\""
     }
   }
 }

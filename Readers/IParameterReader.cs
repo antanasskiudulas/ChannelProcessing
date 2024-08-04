@@ -11,6 +11,6 @@ namespace ChannelProcessing.Readers
         /// Read parameters
         /// </summary>
         /// <param name="source">Parameter source</param>
-        Task<List<ParameterModel>> ReadParameters(string source);
+        Task<ParameterModel> ReadParameters(string source);
     }
 }

@@ -42,5 +42,11 @@ namespace ChannelProcessing.Processors
         /// <param name="parameters">Parameters applied to metric calculation</param>
         /// <returns>Metric</returns>
         double CalculateMetric(List<double> channel, ParameterModel parameters);
+
+        /// <summary>
+        /// Calculates mean value of the channel
+        /// </summary>
+        /// <param name="channel">channel data</param>
+        double CalculateChannelMean(List<double> channel);
     }
 }

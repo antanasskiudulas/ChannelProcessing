@@ -21,10 +21,10 @@
 
         private List<double> ExtractData(string content)
         {
-            string[] dataEntry = content.Split(SeperatorConsts.COMMA);
+            string[] dataEntry = content.Split(SeperatorConsts.COMMA, StringSplitOptions.TrimEntries);
             List<double> result = new List<double>();
 
-            foreach (string entry in dataEntry) 
+            foreach (string entry in dataEntry)
             {
                 if (double.TryParse(entry, out double sensorEntry))
                 {

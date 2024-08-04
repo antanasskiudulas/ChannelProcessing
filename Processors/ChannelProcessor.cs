@@ -1,5 +1,4 @@
 ﻿using ChannelProcessing.Models;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace ChannelProcessing.Processors
 {
@@ -48,16 +47,16 @@ namespace ChannelProcessing.Processors
         }
 
         /// <inheritdoc/>
-        public List<double> Process(List<double> channelData, ParameterModel parameters)
+        public double CalculateChannelMean(List<double> channel)
         {
-            List<double> result = new List<double>();
-
-            foreach (double reading in channelData) 
+            if (channel.Count == 0)
             {
-                result.Add(parameters.Slope * reading + parameters.Intercept);
+                string message = $"Cannot calculate mean for {nameof(channel)} when its length is {channel.Count}";
+                Console.WriteLine(message);
+                throw new DivideByZeroException($"Cannot calculate mean for {nameof(channel)} when its length is {channel.Count}");
             }
 
-            return result;
+            return channel.Sum(x => x) / channel.Count;
         }
 
         private static void ThrowIfChannelLengthsDoNotMatch(List<double> channelB, List<double> channelY)
