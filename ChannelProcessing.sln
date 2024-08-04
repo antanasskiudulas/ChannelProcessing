@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelProcessing", "ChannelProcessing.csproj", "{FF12E4BD-00B5-444A-B333-9E906338363C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF12E4BD-00B5-444A-B333-9E906338363C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF12E4BD-00B5-444A-B333-9E906338363C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF12E4BD-00B5-444A-B333-9E906338363C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF12E4BD-00B5-444A-B333-9E906338363C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13D5AFCB-E4FD-45B5-BC13-01AD14E3329E}
+	EndGlobalSection
+EndGlobal
